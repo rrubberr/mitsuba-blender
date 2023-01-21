@@ -209,9 +209,9 @@ class mitsuba_engine(declarative_property_group):
             'attr': 'preview_depth',
             'name': 'Depth',
             'description': 'Max. path depth used when generating the preview (2: direct illumination, 3: one-bounce indirect, etc.)',
-            'default': int(efutil.find_config_value('mitsuba', 'defaults', 'preview_depth', '2')),
+            'default': int(efutil.find_config_value('mitsuba', 'defaults', 'preview_depth', '8')),
             'min': 2,
-            'max': 10,
+            'max': 16,
             'update': refresh_preview,
             'save_in_preset': True
         },
@@ -220,9 +220,9 @@ class mitsuba_engine(declarative_property_group):
             'attr': 'preview_spp',
             'name': 'SPP',
             'description': 'Samples per pixel used to generate the preview',
-            'default': int(efutil.find_config_value('mitsuba', 'defaults', 'preview_spp', '16')),
+            'default': int(efutil.find_config_value('mitsuba', 'defaults', 'preview_spp', '128')),
             'min': 1,
-            'max': 128,
+            'max': 512,
             'update': refresh_preview,
             'save_in_preset': True
         },
